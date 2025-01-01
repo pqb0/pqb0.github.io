@@ -1,14 +1,26 @@
+/* Variables for colors */
+:root {
+  --main-bg-color: #c1c1c1;
+  --secondary-bg-color: #4a5a65;
+  --footer-text-color: white;
+  --button-bg-color: #bcbebf;
+  --button-hover-bg-color: #e8e8e8;
+  --card-border-color: #a9aeb2;
+}
+
 body {
   margin: 0;
   padding: 0;
   width: 120%;
-  background: linear-gradient(180deg, #c1c1c1, #4a5a65); /* Gradient colors */
+  background: linear-gradient(180deg, var(--main-bg-color), var(--secondary-bg-color));
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 h2 {
   margin: 10px;
   text-align: center;
 }
+
 p {
   margin: 10px;
   padding: 20px;
@@ -16,10 +28,10 @@ p {
 }
 
 footer {
-    color: white; /* Text color for footer */
-    text-align: center; /* Center align text in the footer */
-    padding: 10px;
-    width: 100%; /* Ensure the footer spans the full width */
+  color: var(--footer-text-color);
+  text-align: center;
+  padding: 10px;
+  width: 100%;
 }
 
 .title {
@@ -32,20 +44,20 @@ footer {
   position: relative;
   width: 75vw;
   height: 60vh;
-  border: 0px solid #5fbaff; /* Set the border width and color */
+  border: 0 solid #5fbaff;
   margin: 10vh auto;
   background-image: radial-gradient(#6b6b6c 10%, #ebf5ff 80%);
-  text-align: center; /* Change text-align to center the text horizontally */
-  display: flex; /* Add flexbox display */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 80px;
   transition: all 4.5s ease;
   filter: drop-shadow(0 0 10px #ababab);
 }
 
 .title-box:hover {
-  border: 4px solid #ececec; /* Set the border width and color */
+  border: 4px solid #ececec;
   filter: drop-shadow(0 0 20px #d6d6d6);
   border-radius: 110px;
 }
@@ -62,7 +74,6 @@ footer {
   justify-content: space-evenly;
 }
 
-
 .card {
   position: relative;
   background-image: radial-gradient(#787878 10%, #f0f2f4 90%);
@@ -70,7 +81,7 @@ footer {
   height: 400px;
   padding: 15px;
   margin: 100px auto;
-  border: 4px solid #a9aeb2;
+  border: 4px solid var(--card-border-color);
   border-radius: 50px;
   display: flex;
   flex-direction: column;
@@ -78,7 +89,7 @@ footer {
   align-items: center;
   transition: all 0.5s ease;
   animation: hover-lightly 13s infinite alternate;
-  animation-play-state: running; /* Ensure animation runs by default */
+  animation-play-state: running;
 }
 
 .card:hover {
@@ -89,10 +100,11 @@ footer {
   height: 550px;
   font-size: 1.3em;
   filter: drop-shadow(0 0 20px #c9c9c9);
-  animation-play-state: paused; /* Pause animation on hover */
+  animation-play-state: paused;
 }
+
 .button {
-  background-color: #bcbebf;
+  background-color: var(--button-bg-color);
   color: #fff;
   border: solid 1px rgb(227, 225, 225);
   padding: 10px 20px;
@@ -101,19 +113,16 @@ footer {
   cursor: pointer;
   text-decoration: none;
   transition: background-color 0.3s;
-
 }
 
 .button.home {
   position: fixed;
-
   top: 10px;
   left: 10px;
 }
 
 .button:hover {
-  background-color: #e8e8e8;
-
+  background-color: var(--button-hover-bg-color);
 }
 
 @keyframes hover-lightly {
@@ -121,11 +130,9 @@ footer {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(20vw); /* Move right */
+    transform: translateX(20vw);
   }
   100% {
-    transform: translateX(-20vw); /* Move left */
+    transform: translateX(-20vw);
   }
 }
-
-
