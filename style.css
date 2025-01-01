@@ -80,7 +80,7 @@ footer {
   background-image: radial-gradient(#787878 10%, #f0f2f4 90%);
   width: 90%;
   max-width: 500px;
-  height: auto;
+  height: 250px;
   padding: 15px;
   margin: 40px auto;
   border: 4px solid var(--card-border-color);
@@ -100,11 +100,31 @@ footer {
   border-radius: 80px;
   width: 95%;
   max-width: 550px;
-  height: auto;
+  height: 300px;
   font-size: 1.3em;
   filter: drop-shadow(0 0 20px #c9c9c9);
   animation-play-state: paused;
 }
+
+.card.active {
+  width: 95%;
+  max-width: 60vw;
+  height: 60vh;
+  font-size: 1.7em;
+  border-radius: 80px;
+  background-color: #c3c7cc;
+  filter: drop-shadow(0 0 20px #c9c9c9);
+}
+.extra-text {
+  display: none; /* Hide by default */
+  margin-top: 10px;
+  
+  transition: all ease-in 0.7s;
+}
+.card.active .extra-text {
+  display: block; /* Show when card is active */
+}
+
 
 .button {
   background-color: var(--button-bg-color);
@@ -245,6 +265,15 @@ footer {
   align-items: center;
   transition: all 0.5s ease;
 }
+.card.active {
+  width: 95%;
+  max-width: 60vw;
+  height: 60vh;
+  font-size: 1.3em;
+  border-radius: 80px;
+  background-color: #c3c7cc;
+  filter: drop-shadow(0 0 20px #c9c9c9);
+}
 
 .button {
   background-color: var(--button-bg-color);
@@ -277,6 +306,16 @@ footer {
   .card {
     width: 100%;
     margin: 20px auto;
+  }
+
+  .card.active {
+    width: 95%;
+    max-width: 60vw;
+    height: 60vh;
+    font-size: 1.3em;
+    border-radius: 80px;
+    background-color: #c3c7cc;
+    filter: drop-shadow(0 0 20px #c9c9c9);
   }
 
   .card:hover {
