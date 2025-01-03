@@ -6,6 +6,8 @@
   <title>Math Notes</title>
   <link rel="stylesheet" href="../notes-style.css">
   <script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  \(\def\stackbelow#1#2{\underset{\displaystyle\overset{\displaystyle\shortparallel}{#2}}{#1}}
+  \)
 </head>
 <body>
   <div class="title-box">
@@ -14,29 +16,121 @@
 
   <div class="section-box">
     <h2>Sets</h2>
-    
-    <p class="definition">
-      Definition: qk
+    <p> Mathematics is based in fundamental agreements, The most fundamental one to be the existance of sets and elements,
+        with the property that sets contain element. It must be given that for all elements \(x\), for a set \(X\), either
+        \( x \in X\) or   \( x \notin X\). Let \( X = {a , b}\), then \( a \in X\) and \( b \in X\). We look to expand our
+        object to represent order of elements.
     </p>
-    <p>In real analysis, sequence convergence is fundamental. It describes the behavior of a sequence approaching a limit as the number of terms increases. This concept forms the foundation for understanding limits, continuity, and differentiability in calculus.</p>
-
-    <div class="math-content">
-      <h3 class="ptitle">Proof:</h3>
-      $$\lim_{n \to \infty} \frac{1}{n} = 0$$
-    </div>
 
     <p class="definition">
-      Definition: A function \( f \) is continuous at a point \( c \) if for every \( \epsilon > 0 \), there exists \( \delta > 0 \) such that if \( |x - c| < \delta \), then \( |f(x) - f(c)| < \epsilon \).
-    </p>
-    <p>The definition of continuity means that for a function to be continuous at a point, small changes in the input around that point must result in small changes in the output. This concept is crucial for understanding the behavior of functions and their graphs, especially in calculus. For example:</p>
+      Definition (Kuratowski, 1921): An ordered pair is the set \((x, y) = \lbrace x, \lbrace x, y \rbrace \rbrace \).
+                                     It follows that \((x, y) \neq (y, x)\).
 
-    <div class="math-content">
-      $$\lim_{x \to 2} (x^2 - 4) = 0$$
-      $$\int_{matt}^{\infty} f(x)dx$$
-    </div>
+    </p>
+
+    <p class="definition"> 
+        Proposition: \( \text{     }((x, y) = (a ,b)) \iff (x = a \text{ and } y = b)\)
+    </p>
+    <p> For a biconditional proof we prove both statements \( \Leftarrow, \Rightarrow \) seperately.</p>
+
+    <div class="proof"> Proof: </div>
+    <p> 
+        For \( \Leftarrow \) Assume  \((x = a \text{ and } y = b)\), then the expression \( (x, y) = (a ,b)\)
+        becomes \( (x, y) = (x ,y)\) by substituting the assumption.
+        <br>
+        For \( \Rightarrow \) Assume \( (x, y) = (a ,b) \) , then by the definition of ordered Pair:
+        $$ \lbrace a , \lbrace a, b \rbrace \rbrace = \lbrace x , \lbrace x, y \rbrace \rbrace $$
+
+        Procede by cases.
+        <br>
+        Case 1, \(a = b\), Then the ordered pair \( (a, b) = (a, a)= \lbrace a , \lbrace a, a \rbrace \rbrace =
+        \lbrace a \rbrace \) 
+        From assumption \( (x, y) = (a ,b) = \lbrace a \rbrace\)
+        <br>
+        \( \implies \lbrace x , \lbrace x, y \rbrace \rbrace = {a} \implies x = y \implies a = x = b = y\)
+        <br>
+        Case 2, Assume \(a \neq b \text{ and } x \neq y\), then  $$ \lbrace a , \lbrace a, b \rbrace \rbrace =
+        \lbrace x , \lbrace x, y \rbrace \rbrace $$
+        Which is only possible if \( a = x \text{ and } b = y. \quad \Box \)
+        <br>
+      </p>
+
+    <p class="definition">
+      Definition: Let \(X,Y\) be sets, then the Cartesian Product of \(X,Y\) is the set: 
+      $$X \times Y = \lbrace (x,y) \: \vert \: x \in X \text{ and } y \in Y \rbrace $$ 
+    </p>
+
+    <p class="definition">
+        Definition: A relation \(R\) on the set \(X\), is a subset \(R \subseteq (X \times X)\)
+    </p>
+    <p>
+      For Example: the set \(X = \lbrace a, b, c \rbrace\) has cartesian product with itself:
+      $$ X \times X = \lbrace (a,a) , (a,b), (a, c), (b,a) , (b,b), (b, c), (c, a) , (c, b), (c, c) \rbrace$$
+      Different relations \(R_1 , R_2 \subseteq X \times X\) on \(X\) are:
+      $$R_1 = \lbrace (a, a), (b, b), (c, c)\rbrace$$ 
+      $$R_2 = \lbrace (a, b), (a, b), (c, c)\rbrace$$
+    </p>
+    <p class="definition"> 
+      Definition: Let \(X \neq \phi. \: \) A Partial Order on \(X\) is a relation \(R \subseteq X \times X \)
+      satisfying the following:
+      $$ \text{- Reflexivity : } \forall x \in X \qquad (x, x) \in R   $$
+      $$ \text{- AntiSymmetry : } \forall x,y \in X \qquad \text{ If } (x, y) \in R  \text{ and } (y, x) \in R
+      \implies y = x $$
+      $$ \text{- Transitivity : } \forall x,y,z \in X \qquad \text{ If } (x, y) \in R  \text{ and } (y, z) \in 
+      R \implies (x, z) \in R $$
+    </p>
+
+    <p>
+      For Example: Take the set \(X = \lbrace a, b, c \rbrace\). Then the relation \(R = \lbrace (a, a),
+      (a, b), (a, c), (b, b), (b, c), (c, c) \rbrace\) is antisymmetric Because,
+      \( \forall x \in X \: : \: (x, x) \in R\), 
+      We have anisymmetry because for no elements \(x, y\) we have \((x, y)\) and \((y, x)\) be in \(R\).
+      Transitivity holds aswell if checking, \((a, b) , (b, c) \in R \implies (a, c) \in R\). Then \(R\) 
+      is a partial order.
+      We denote this for element of the partial order as: 
+      $$ a \preccurlyeq a \qquad  a \preccurlyeq b \qquad a \preccurlyeq c \qquad b \preccurlyeq c$$
+      In fact, the well known \leq relation is a partial order. There exist many types of partial order
+      like in the refinement of partitions in riemann integrability and all of mathematics. 
+    </p>
+    <p class="definition">
+      Let \(R \subseteq (X \times X) \) be a relation on \(X\), then it is an equivalence relation if it is:
+      $$ \text{Reflexive : } \forall x \in X, (x, x) \in R$$
+    </p>
 
   </div>
-  
+  <div class="section-box">
+    <h2>
+      Natural Numbers
+    </h2>
+    <p>
+      Number Systems can be created through multiple definitions, we will use Peano Axioms and an example
+      using sets. Denote each set with an arbitrary symbol:
+      $$\stackbelow{\phi}{\mathbb{N}_0} \qquad \stackbelow{\lbrace \phi \rbrace}{\mathbb{N}_1} \qquad 
+        \stackbelow{ \lbrace \phi, \lbrace \phi \rbrace \rbrace}{\mathbb{N}_2} \qquad  
+        \stackbelow{\lbrace \phi,\lbrace \phi, \lbrace \phi \rbrace \rbrace}{\mathbb{N}_3} \quad \cdots \quad
+        \mathbb{N}_{n+1} = \mathbb{N}_{n} \cup \lbrace \phi \rbrace $$
+      The subscripts utilized are simply for understanding because \(1, + \text{ and } n\) are not necessarily
+      defined yet, there is many ways it can be defined due to convenience and the theory being developed; 
+      Some may or may not include 0 and define certain functions or operations to study diffrent properties,
+      like Rings and Groups, This is the way group theory is studied. However,  the following definition is
+      more appropriate for our interest of study:
+    </p>
+    <p class="definition">
+      Definition (Peano Axioms): Let \( \mathbb{N}\) be a set with a distinguished elemented denoted \(0\) and
+                                 a function \(s :\: \mathbb{N} \to  \mathbb{N} \), then \((\mathbb{N}, s, 0)\) 
+                                 satisfies Peano axioms if
+                                $$  \nexists n \in \mathbb{N}: \quad s(n) = 0 $$
+                                $$ s \text{ is injective: } \forall m, n \in \mathbb{N} \quad s(m)  = s(n)
+                                   \implies m = n $$
+                                $$ \text{If } \exists K \subseteq \mathbb{N} \text{ such that } 0 \in K
+                                   \text{ and } ,\forall n \in \mathbb{N} : n \in K \implies s(n) \in K \:
+                                   \text{ then } \: K = \mathbb{N} $$ 
+    </p>
+    <p>
+      When doing induction, we will use this last property to prove a statemet that is true \( \forall n \in \mathbb{N} \)
+    </p>
+  </div>
+
   <div style="text-align: center; margin: 20px;">
     <a href="../project1.html" class="button home" target="_self">Return to Home</a>
 </div>
