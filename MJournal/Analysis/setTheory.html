@@ -6,6 +6,7 @@
   <title>Math Notes</title>
   <link rel="stylesheet" href="../notes-style.css">
   <script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
   \(\def\stackbelow#1#2{\underset{\displaystyle\overset{\displaystyle\shortparallel}{#2}}{#1}}
   \)
 </head>
@@ -124,10 +125,28 @@
                                    \implies m = n $$
                                 $$ \text{If } \exists K \subseteq \mathbb{N} \text{ such that } 0 \in K
                                    \text{ and } ,\forall n \in \mathbb{N} : n \in K \implies s(n) \in K \:
-                                   \text{ then } \: K = \mathbb{N} $$ 
+                                   \text{ then } \: K = \mathbb{N}. \text{K is called } \textit{inductive} $$ 
     </p>
     <p>
-      When doing induction, we will use this last property to prove a statemet that is true \( \forall n \in \mathbb{N} \)
+      When doing induction, we will use this last property to prove a statemet that is true \( \forall n \in
+      \mathbb{N} \). 
+    </p>
+    <div class="proof"> Method for Induction</div>
+    <p>
+      If the purpose is to prove that statement \(P_n\) holds \( \forall n \in \mathbb{N}. \: \)For the proof: 
+      Let \(K\) be a set
+      $$ K = \lbrace m \in \mathbb{N} \: \vert \: P_m \rbrace$$
+      Base Step: Show that element \(0 \in K\). (For recursive statements show \( 1,2, ... \in K\) etc. )
+      <br>
+      Inductive Step: Assume that for some arbitrary \(m \in \mathbb{N}, m \in K \) that is \(P_m\). Prove 
+      $$ (m \in K \implies s(m) \in K) \iff (P_n \implies P_{n+1})$$
+      $$ (0 \in K) \text{ and }  (m \in K \implies s(m) \in K) \implies K \text{ is inductive } \forall n \in \mathbb{N} : P_n $$
+    </p>
+    <p class="definition"> 
+      Definition: a binary operation on \(X\) is a map \( \theta : X \times X \to X\)
+    </p>
+    <p class="definition">
+
     </p>
   </div>
 

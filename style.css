@@ -202,3 +202,57 @@ footer {
     transform: translateX(-10vw);
   }
 }
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  
+  /* Reduce Title Box Size */
+  .title-box {
+    width: 95%;
+    height: 30vh;
+    padding: 15px;
+    border-radius: 40px;
+    margin: 5vh auto;
+  }
+
+  .title {
+    font-size: 3em; /* Reduce title size */
+  }
+
+  /* Stack Cards Vertically */
+  .section-box {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  /* Reduce Card Size */
+  .card {
+    width: 95%;
+    max-width: 400px;
+    height: auto;
+    padding: 30px;
+    border-radius: 30px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .card:hover {
+    width: 100%;
+    height: auto;
+    max-width: 420px;
+    border-radius: 40px;
+  }
+
+  /* Adjust Button Size */
+  .button {
+    font-size: 0.9em;
+    padding: 8px 15px;
+  }
+
+  /* Stop Cards from Moving Side-to-Side */
+  @keyframes hover-lightly {
+    0%, 100% {
+      transform: translateX(0);
+    }
+  }
+}
