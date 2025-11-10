@@ -126,8 +126,6 @@ footer {
   justify-content: space-around;
   align-items: center;
   transition: all 0.5s ease;
-  animation: hover-lightly 13s infinite alternate;
-  animation-play-state: running;
   word-wrap: break-word; /* Ensures teaxt wraps */
   overflow-wrap: break-word; /* Compatible with more browsers */
 }
@@ -140,7 +138,6 @@ footer {
   max-width: 550px;
   height: 300px;
   filter: drop-shadow(0 0 20px #c9c9c9);
-  animation-play-state: paused;
 
 }
 
