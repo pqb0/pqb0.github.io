@@ -1,6 +1,6 @@
 /* Variables for colors */
 :root {
-  --main-bg-color: #c1c1c1;
+  --main-bg-color: #d8d8d8;
   --secondary-bg-color: #3b5a70;
   --footer-text-color: white;
   --button-bg-color: #bcbebf;
@@ -15,7 +15,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background: linear-gradient(180deg, var(--main-bg-color), var(--secondary-bg-color));
+  background: linear-gradient(65deg, var(--main-bg-color), var(--secondary-bg-color));
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   line-height: 1.6;
 }
@@ -34,7 +34,6 @@ body {
   height: 40vh;
   padding: 20px;
   margin: 10vh auto;
-  background-image: radial-gradient(var(--container-dark-color) 10%, var(--container-light-color) 90%);
   text-align: center;
   display: flex;
   justify-content: center;
@@ -63,7 +62,6 @@ body {
   margin: 20px auto;
   width: 90%;
   max-width: 800px;
-  background: radial-gradient(var(--container-dark-color) 10%, var(--container-light-color) 80%);
   border: 4px solid var(--container-light-color);
   border-radius: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);

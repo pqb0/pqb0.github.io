@@ -83,7 +83,6 @@ footer {
   height: 40vh;
   padding: 20px;
   margin: 10vh auto;
-  background-image: radial-gradient(var(--container-dark-color) 10%, var(--container-light-color) 90%);
   text-align: center;
   display: flex;
   justify-content: center;
@@ -113,13 +112,11 @@ footer {
 
 .card {
   position: relative;
-  background-image: radial-gradient(var(--container-dark-color) 10%, var(--container-light-color) 90%);
   width: 90%;
   max-width: 500px;
   height: 250px;
   padding: 55px;
   margin: 20px auto;
-  border: 4px solid var(--card-border-color);
   border-radius: 50px;
   display: flex;
   flex-direction: column;
@@ -131,18 +128,17 @@ footer {
 }
 
 .card:hover {
-  background-color: #c3c7cc;
-  border: 5px solid #eaeef1;
+  border: 3px solid #d0d0d0;
   border-radius: 80px;
   width: 95%;
   max-width: 550px;
   height: 300px;
-  filter: drop-shadow(0 0 20px #c9c9c9);
+  filter: drop-shadow(0 0 20px #dadada);
 
 }
 
 .card:hover .box-content {
-  color: #c3c7cc;
+  color: #d8dce2;
 }
 .card.active {
   width: 95%;
@@ -150,7 +146,6 @@ footer {
   height: 60vh;
   font-size: 1.2em;
   border-radius: 80px;
-  background-color: #c3c7cc;
   filter: drop-shadow(0 0 20px #c9c9c9);
 }
 .extra-text {
