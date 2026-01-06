@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const list = repos.filter(r => !r.fork);
   
         container.innerHTML = list.map(repo => `
-          <article class="project-card">
-            <h3><a href="${repo.html_url}" target="_blank" rel="noopener">${repo.name}</a></h3>
-            <p class="desc">${repo.description || ''}</p>
+          <article class="card">
+            <h3><a href="${repo.html_url}" target="_blank" rel="noopener" class="box-content">${repo.name}</a></h3>
+            <p class="">${repo.description || ''}</p>
             <p class="meta">
               ${repo.language ? `<span class="lang">${repo.language}</span>` : ''} ★ ${repo.stargazers_count}
             </p>
