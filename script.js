@@ -41,9 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <article class="card">
           <h3><a href="${repo.html_url}" target="_blank" rel="noopener" class="box-content">${repo.name}</a></h3>
           <p class="">${repo.description || ''}</p>
-          <p class="meta">
-            ★ ${repo.stargazers_count}
-          </p>
           ${repo.homepage ? `<a class="demo" href="${repo.homepage}" target="_blank">Live demo</a>` : ''}
         </article>
       `).join('');

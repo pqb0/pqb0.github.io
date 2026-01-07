@@ -6,7 +6,7 @@
   <title>Math Notes</title>
   <link rel="stylesheet" href="../notes-style.css">
   <script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  
+
   \(\def\stackbelow#1#2{\underset{\displaystyle\overset{\displaystyle\shortparallel}{#2}}{#1}}
   \)
 </head>
@@ -17,145 +17,441 @@
 
   <div class="section-box">
     <h2>Sets</h2>
-    <p> Mathematics is based in fundamental agreements, The most fundamental one to be the existance of sets and elements,
-        with the property that sets contain element. It must be given that for all elements \(x\), for a set \(X\), either
-        \( x \in X\) or   \( x \notin X\). Let \( X = {a , b}\), then \( a \in X\) and \( b \in X\). We look to expand our
-        object to represent order of elements.
-    </p>
-
-    <p class="definition">
-      Definition (Kuratowski, 1921): An ordered pair is the set \((x, y) = \lbrace x, \lbrace x, y \rbrace \rbrace \).
-                                     It follows that \((x, y) \neq (y, x)\).
-
-    </p>
-
-    <p class="definition"> 
-        Proposition: \( \text{     }((x, y) = (a ,b)) \iff (x = a \text{ and } y = b)\)
-    </p>
-    <p> For a biconditional proof we prove both statements \( \Leftarrow, \Rightarrow \) seperately.</p>
-
-    <div class="proof"> Proof: </div>
-    <p> 
-        For \( \Leftarrow \) Assume  \((x = a \text{ and } y = b)\), then the expression \( (x, y) = (a ,b)\)
-        becomes \( (x, y) = (x ,y)\) by substituting the assumption.
-        <br>
-        For \( \Rightarrow \) Assume \( (x, y) = (a ,b) \) , then by the definition of ordered Pair:
-        $$ \lbrace a , \lbrace a, b \rbrace \rbrace = \lbrace x , \lbrace x, y \rbrace \rbrace $$
-
-        Procede by cases.
-        <br>
-        Case 1, \(a = b\), Then the ordered pair \( (a, b) = (a, a)= \lbrace a , \lbrace a, a \rbrace \rbrace =
-        \lbrace a \rbrace \) 
-        From assumption \( (x, y) = (a ,b) = \lbrace a \rbrace\)
-        <br>
-        \( \implies \lbrace x , \lbrace x, y \rbrace \rbrace = {a} \implies x = y \implies a = x = b = y\)
-        <br>
-        Case 2, Assume \(a \neq b \text{ and } x \neq y\), then  $$ \lbrace a , \lbrace a, b \rbrace \rbrace =
-        \lbrace x , \lbrace x, y \rbrace \rbrace $$
-        Which is only possible if \( a = x \text{ and } b = y. \quad \Box \)
-        <br>
-      </p>
-
-    <p class="definition">
-      Definition: Let \(X,Y\) be sets, then the Cartesian Product of \(X,Y\) is the set: 
-      $$X \times Y = \lbrace (x,y) \: \vert \: x \in X \text{ and } y \in Y \rbrace $$ 
-    </p>
-
-    <p class="definition">
-        Definition: A relation \(R\) on the set \(X\), is a subset \(R \subseteq (X \times X)\)
-    </p>
     <p>
-      For Example: the set \(X = \lbrace a, b, c \rbrace\) has cartesian product with itself:
-      $$ X \times X = \lbrace (a,a) , (a,b), (a, c), (b,a) , (b,b), (b, c), (c, a) , (c, b), (c, c) \rbrace$$
-      Different relations \(R_1 , R_2 \subseteq X \times X\) on \(X\) are:
-      $$R_1 = \lbrace (a, a), (b, b), (c, c)\rbrace$$ 
-      $$R_2 = \lbrace (a, b), (a, b), (c, c)\rbrace$$
+      Mathematics is based in fundamental agreements, the most fundamental one being the existence of sets
+      and elements, with the property that sets contain elements.  It must be given that for all elements
+      \(x\) and for a set \(X\), either \(x\in X\) or \(x\notin X\).  Let \(X=\{a,b\}\); then \(a\in X\) and
+      \(b\in X\).  We look to expand our objects in order to represent order of elements.
     </p>
-    <p class="definition"> 
-      Definition: Let \(X \neq \phi. \: \) A Partial Order on \(X\) is a relation \(R \subseteq X \times X \)
-      satisfying the following:
-      $$ \text{- Reflexivity : } \forall x \in X \qquad (x, x) \in R   $$
-      $$ \text{- AntiSymmetry : } \forall x,y \in X \qquad \text{ If } (x, y) \in R  \text{ and } (y, x) \in R
-      \implies y = x $$
-      $$ \text{- Transitivity : } \forall x,y,z \in X \qquad \text{ If } (x, y) \in R  \text{ and } (y, z) \in 
-      R \implies (x, z) \in R $$
+
+    <p class="definition">
+      Definition (Kuratowski, 1921): An ordered pair is the set
+      \[
+      (x,y)=\{\,x,\{x,y\}\,\}.
+      \]
+      It follows that \((x,y)\neq (y,x)\).
+    </p>
+
+    <p class="definition">
+      Proposition: \(((x,y)=(a,b))\iff (x=a\text{ and }y=b)\).
+    </p>
+    <div class="proof">Proof:</div>
+    <p>
+      <strong>\(\Leftarrow\)</strong> Assume \(x=a\) and \(y=b\). Substituting into the left‑hand side
+      gives \((x,y)=(a,b)\), i.e. \((a,b)=(a,b)\), which is true.
+      <br><br>
+      <strong>\(\Rightarrow\)</strong> Assume \((x,y)=(a,b)\). By definition,
+      \[
+      \{\,a,\{a,b\}\,\}=\{\,x,\{x,y\}\,\}.
+      \]
+      Comparing the two–element sets we obtain the two cases below.
+      <br><br>
+      <em>Case 1.</em> \(a=b\). Then \((a,b)=\{a,\{a\}\}=\{a\}\). Hence \(\{x,\{x,y\}\}=\{a\}\) which forces
+      \(x=y=a\) and therefore \(a=x\) and \(b=y\).
+      <br><br>
+      <em>Case 2.</em> \(a\neq b\). Then the unordered pairs \(\{a,\{a,b\}\}\) and
+      \(\{x,\{x,y\}\}\) each contain two distinct elements. Equality of the two sets forces
+      \(a=x\) and \(\{a,b\}=\{x,y\}\), whence \(b=y\).  ∎
+    </p>
+
+    <p class="definition">
+      Definition: Let \(X,Y\) be sets.  The Cartesian product of \(X\) and \(Y\) is
+      \[
+      X\times Y=\{\, (x,y)\mid x\in X\text{ and }y\in Y\,\}.
+      \]
+    </p>
+
+    <p class="definition">
+      Definition: A relation \(R\) on a set \(X\) is a subset \(R\subseteq X\times X\).
     </p>
 
     <p>
-      For Example: Take the set \(X = \lbrace a, b, c \rbrace\). Then the relation \(R = \lbrace (a, a),
-      (a, b), (a, c), (b, b), (b, c), (c, c) \rbrace\) is antisymmetric Because,
-      \( \forall x \in X \: : \: (x, x) \in R\), 
-      We have anisymmetry because for no elements \(x, y\) we have \((x, y)\) and \((y, x)\) be in \(R\).
-      Transitivity holds aswell if checking, \((a, b) , (b, c) \in R \implies (a, c) \in R\). Then \(R\) 
-      is a partial order.
-      We denote this for element of the partial order as: 
-      $$ a \preccurlyeq a \qquad  a \preccurlyeq b \qquad a \preccurlyeq c \qquad b \preccurlyeq c$$
-      In fact, the well known \leq relation is a partial order. There exist many types of partial order
-      like in the refinement of partitions in riemann integrability and all of mathematics. 
-    </p>
-    <p class="definition">
-      Let \(R \subseteq (X \times X) \) be a relation on \(X\), then it is an equivalence relation if it is:
-      $$ \text{Reflexive : } \forall x \in X, (x, x) \in R$$
+      For example, with \(X=\{a,b,c\}\) we have
+      \[
+      X\times X=\{(a,a),(a,b),(a,c),(b,a),(b,b),(b,c),(c,a),(c,b),(c,c)\}.
+      \]
+      Two particular relations on \(X\) are
+      \[
+      R_{1}=\{(a,a),(b,b),(c,c)\},\qquad
+      R_{2}=\{(a,b),(b,c),(c,c)\}.
+      \]
     </p>
 
+    <p class="definition">
+      Definition: Let \(X\neq\varnothing\).  A **partial order** on \(X\) is a relation
+      \(R\subseteq X\times X\) satisfying
+      \[
+      \begin{aligned}
+      &\text{Reflexivity: }      &&\forall x\in X\;(x,x)\in R,\\[2pt]
+      &\text{Antisymmetry: }     &&\forall x,y\in X\;[(x,y)\in R\land(y,x)\in R\;\Rightarrow\;x=y],\\[2pt]
+      &\text{Transitivity: }    &&\forall x,y,z\in X\;[(x,y)\in R\land(y,z)\in R\;\Rightarrow\;(x,z)\in R].
+      \end{aligned}
+      \]
+    </p>
+
+    <p>
+      For the set \(X=\{a,b,c\}\) the relation
+      \[
+      R=\{(a,a),(a,b),(a,c),(b,b),(b,c),(c,c)\}
+      \]
+      is a partial order.  It is reflexive, it is antisymmetric because none of the pairs
+      \((x,y)\) and \((y,x)\) occur simultaneously with \(x\neq y\), and it is transitive
+      (e.g. \((a,b),(b,c)\in R\Rightarrow (a,c)\in R\)).  We write \(x\preccurlyeq y\) for
+      \((x,y)\in R\).  The familiar “\(\le\)” on \(\mathbb N\) is a partial order.
+    </p>
+
+    <p class="definition">
+      Definition: A relation \(R\subseteq X\times X\) is an **equivalence relation** when it is
+      reflexive, symmetric, and transitive.
+    </p>
   </div>
+
   <div class="section-box">
-    <h2>
-      Natural Numbers
-    </h2>
+    <h2>Natural Numbers</h2>
     <p>
-      Number Systems can be created through multiple definitions, we will use Peano Axioms and an example
-      using sets. Denote each set with an arbitrary symbol:
-      $$\stackbelow{\phi}{\mathbb{N}_0} \qquad \stackbelow{\lbrace \phi \rbrace}{\mathbb{N}_1} \qquad 
-        \stackbelow{ \lbrace \phi, \lbrace \phi \rbrace \rbrace}{\mathbb{N}_2} \qquad  
-        \stackbelow{\lbrace \phi,\lbrace \phi, \lbrace \phi \rbrace \rbrace}{\mathbb{N}_3} \quad \cdots \quad
-        \mathbb{N}_{n+1} = \mathbb{N}_{n} \cup \lbrace \phi \rbrace $$
-      The subscripts utilized are simply for understanding because \(1, + \text{ and } n\) are not necessarily
-      defined yet, there is many ways it can be defined due to convenience and the theory being developed; 
-      Some may or may not include 0 and define certain functions or operations to study diffrent properties,
-      like Rings and Groups, This is the way group theory is studied. However,  the following definition is
-      more appropriate for our interest of study:
+      Number systems can be created through multiple definitions; we will use the Peano axioms
+      together with an explicit set‑theoretic construction.  Let
     </p>
     <p class="definition">
-      Definition (Peano Axioms): Let \( \mathbb{N}\) be a set with a distinguished elemented denoted \(0\) and
-                                 a function \(s :\: \mathbb{N} \to  \mathbb{N} \), then \((\mathbb{N}, s, 0)\) 
-                                 satisfies Peano axioms if
-                                $$  \nexists n \in \mathbb{N}: \quad s(n) = 0 $$
-                                $$ s \text{ is injective: } \forall m, n \in \mathbb{N} \quad s(m)  = s(n)
-                                   \implies m = n $$
-                                $$ \text{If } \exists K \subseteq \mathbb{N} \text{ such that } 0 \in K
-                                   \text{ and } ,\forall n \in \mathbb{N} : n \in K \implies s(n) \in K \:
-                                   \text{ then } \: K = \mathbb{N}. \text{K is called } \textit{inductive} $$ 
+      \[
+      \begin{aligned}
+      \mathbb N_{0}&=\varnothing,\\
+      \mathbb N_{1}&=\{\varnothing\},\\
+      \mathbb N_{2}&=\{\varnothing,\{\varnothing\}\},\\
+      \mathbb N_{3}&=\{\varnothing,\{\varnothing\},\{\varnothing,\{\varnothing\}\},\dots\},
+      \end{aligned}
+      \qquad
+      \mathbb N_{n+1}= \mathbb N_{n}\cup\{\mathbb N_{n}\}.
+      \]
+      The object \(\mathbb N=\bigcup_{n\in\mathbb N} \mathbb N_{n}\) is the set of natural numbers.
     </p>
-    <p>
-      When doing induction, we will use this last property to prove a statemet that is true \( \forall n \in
-      \mathbb{N} \). 
-    </p>
-    <div class="proof"> Method for Induction</div>
-    <p>
-      If the purpose is to prove that statement \(P_n\) holds \( \forall n \in \mathbb{N}. \: \)For the proof: 
-      Let \(K\) be a set
-      $$ K = \lbrace m \in \mathbb{N} \: \vert \: P_m \rbrace$$
-      Base Step: Show that element \(0 \in K\). (For recursive statements show \( 1,2, ... \in K\) etc. )
-      <br>
-      Inductive Step: Assume that for some arbitrary \(m \in \mathbb{N}, m \in K \) that is \(P_m\). Prove 
-      $$ (m \in K \implies s(m) \in K) \iff (P_n \implies P_{n+1})$$
-      $$ (0 \in K) \text{ and }  (m \in K \implies s(m) \in K) \implies K \text{ is inductive } \forall n \in \mathbb{N} : P_n $$
-    </p>
-    <p class="definition"> 
-      Definition: a binary operation on \(X\) is a map \( \theta : X \times X \to X\)
-    </p>
-    <p class="definition">
 
+    <p class="definition">
+      Definition (Peano Axioms):  Let \(\mathbb N\) be a set with a distinguished element
+      \(0\in\mathbb N\) and a function \(s:\mathbb N\to\mathbb N\) (the **successor**).  The triple
+      \((\mathbb N,s,0)\) satisfies the Peano axioms when
+      \[
+      \begin{aligned}
+      &(1)\qquad &\forall n\in\mathbb N\;[\,s(n)\neq 0\,];\\[2pt]
+      &(2)\qquad &\forall m,n\in\mathbb N\;[\,s(m)=s(n)\;\Rightarrow\;m=n\,];\\[2pt]
+      &(3)\qquad &\text{If }K\subseteq\mathbb N,\;0\in K\text{ and }(\forall n\in K\;s(n)\in K),\text{ then }K=\mathbb N.
+      \end{aligned}
+      \]
+    </p>
+
+    <p>
+      Property (3) is the induction principle: to prove a statement \(P(n)\) for all
+      \(n\in\mathbb N\) we show that \(P(0)\) holds and that \(P(k)\Rightarrow P(s(k))\) for an
+      arbitrary \(k\).  The set of all \(n\) for which \(P(n)\) holds is inductive, hence equal
+      to \(\mathbb N\).
+    </p>
+
+    <div class="proof">Method for Induction</div>
+    <p>
+      Let \(K=\{\,n\in\mathbb N\mid P(n)\,\}\).  Showing \(0\in K\) (base step) and
+      \(\forall m\in K\;(s(m)\in K)\) (inductive step) yields \(K\) inductive, so by (3) we have
+      \(K=\mathbb N\); therefore \(P(n)\) holds for every natural number.
+    </p>
+
+    <p class="definition">
+      Definition: A **binary operation** on a set \(X\) is a map
+      \(\theta:X\times X\to X\).
     </p>
   </div>
+
+  <!-- ======================  NEW CONTENT STARTS HERE ====================== -->
+
+  <div class="section-box">
+    <h2>Integers \(\mathbb Z\)</h2>
+    <p class="definition">
+      Definition:  Let \(\mathbb N\) be the set of natural numbers.  Define an equivalence relation
+      \(\sim\) on \(\mathbb N\times\mathbb N\) by
+      \[
+        (a,b)\sim(c,d)\;\Longleftrightarrow\;a+d=b+c .
+      \]
+      The **integers** are the equivalence classes:
+      \[
+        \mathbb Z:= (\mathbb N\times\mathbb N)/\!\sim .
+      \]
+      The class of \((a,b)\) is denoted \([a,b]\) and is interpreted as the “difference’’ \(a-b\).
+    </p>
+
+    <div class="proof">Well‑definedness of \(\sim\)</div>
+    <p>
+      <strong>Reflexivity.</strong>  For any \((a,b)\) we have \(a+b=b+a\); hence
+      \((a,b)\sim(a,b)\).<br>
+      <strong>Symmetry.</strong>  If \((a,b)\sim(c,d)\) then \(a+d=b+c\), which is equivalent to
+      \(c+b=d+a\); thus \((c,d)\sim(a,b)\).<br>
+      <strong>Transitivity.</strong>  Suppose \((a,b)\sim(c,d)\) and \((c,d)\sim(e,f)\).  Then
+      \(a+d=b+c\) and \(c+f=d+e\).  Adding the two equalities gives
+      \(a+d+c+f = b+c+d+e\), i.e. \(a+f = b+e\); hence \((a,b)\sim(e,f)\).  ∎
+    </p>
+
+    <p class="definition">
+      Definition (Addition on \(\mathbb Z\)):  For \([a,b],[c,d]\in\mathbb Z\) set
+      \[
+        [a,b]\;+\;[c,d]\;:=\;[a+c,\;b+d].
+      \]
+    </p>
+
+    <div class="proof">Addition is well‑defined</div>
+    <p>
+      Assume \([a,b]=[a',b']\) and \([c,d]=[c',d']\); thus \(a+b'=b+a'\) and \(c+d'=d+c'\).
+      Then
+      \[
+        (a+c)+(b'+d') = (a+b')+(c+d') = (b+a')+(d+c') = (b+d)+(a'+c'),
+      \]
+      which shows \([a+c,b+d]=[a'+c',b'+d']\).  Hence the definition does not depend on the
+      representatives. ∎
+    </p>
+
+    <p class="definition">
+      Definition (Multiplication on \(\mathbb Z\)):  For \([a,b],[c,d]\in\mathbb Z\) set
+      \[
+        [a,b]\;\cdot\;[c,d]\;:=\;[ac+bd,\;ad+bc].
+      \]
+    </p>
+
+    <div class="proof">Multiplication is well‑defined</div>
+    <p>
+      Suppose \([a,b]=[a',b']\) and \([c,d]=[c',d']\).  Then \(a+b'=b+a'\) and
+      \(c+d'=d+c'\).  A short computation using distributivity gives
+      \[
+        (ac+bd)+(a'c'+b'd') = (a+b')(c+d') = (b+a')(d+c') = (ad+bc)+(a'd'+b'c').
+      \]
+      Thus \([ac+bd,ad+bc]=[a'c'+b'd',a'd'+b'c']\), and the product is independent of the
+      representatives. ∎
+    </p>
+
+    <p class="definition">
+      Definition (Order on \(\mathbb Z\)):  For \([a,b],[c,d]\in\mathbb Z\) write
+      \[
+        [a,b]\;\le\;[c,d]\quad\Longleftrightarrow\quad a+d\le_{\mathbb N} c+b,
+      \]
+      where \(\le_{\mathbb N}\) is the usual order on natural numbers.
+    </p>
+
+    <div class="proof">Order is well‑defined</div>
+    <p>
+      If \([a,b]=[a',b']\) and \([c,d]=[c',d']\) then \(a+b'=b+a'\) and \(c+d'=d+c'\).
+      Adding the first equality to \(c+d\) and the second to \(a+b\) yields
+      \[
+        a+d+b'+c = a+b'+c+d = b+a'+c+d = b+c+d'+a' .
+      \]
+      Hence \(a+d\le c+b\) iff \(a'+d'\le c'+b'\).  Thus the relation does not depend on the
+      chosen representatives. ∎
+    </p>
+  </div>
+
+  <div class="section-box">
+    <h2>Rational Numbers \(\mathbb Q\)</h2>
+    <p class="definition">
+      Definition:  Let \(\mathbb Z\) be the set of integers.  Define an equivalence relation
+      \(\approx\) on \(\mathbb Z\times(\mathbb Z\setminus\{0\})\) by
+      \[
+        (p,q)\approx(r,s)\;\Longleftrightarrow\;ps=qr .
+      \]
+      The **rationals** are the equivalence classes
+      \[
+        \mathbb Q:=\bigl(\mathbb Z\times(\mathbb Z\setminus\{0\})\bigr)\big/\!\approx .
+      \]
+      The class of \((p,q)\) is denoted \([p,q]\) and is interpreted as the fraction \(\frac{p}{q}\).
+    </p>
+
+    <div class="proof">Well‑definedness of \(\approx\)</div>
+    <p>
+      Reflexivity: \(p q = q p\) gives \((p,q)\approx(p,q)\).<br>
+      Symmetry: from \(ps=qr\) we obtain \(qr=ps\), so \((r,s)\approx(p,q)\).<br>
+      Transitivity: if \((p,q)\approx(r,s)\) and \((r,s)\approx(u,v)\) then
+      \(ps=qr\) and \(rv=su\).  Multiplying the first equality by \(v\) and the second by \(q\) gives
+      \(psv=qr v\) and \(q rv = q s u\).  Since \(qr v = q r v\), we obtain \(psv = q s u\),
+      i.e. \(p v = q u\).  Hence \((p,q)\approx(u,v)\).  ∎
+    </p>
+
+    <p class="definition">
+      Definition (Addition on \(\mathbb Q\)):  For \([p,q],[r,s]\in\mathbb Q\) set
+      \[
+        [p,q]\;+\;[r,s]\;:=\;[ps+rq,\;qs].
+      \]
+    </p>
+
+    <div class="proof">Addition is well‑defined</div>
+    <p>
+      Suppose \((p,q)\approx(p',q')\) and \((r,s)\approx(r',s')\); thus \(pq'=p'q\) and
+      \(rs'=r's\).  Compute
+      \[
+        (ps+rq)s'q' = p s s' q' + r q s' q' = p' q s s' + r' q' s s
+      \]
+      which equals \((p's'+r'q')q s\).  Hence the two representatives give the same class,
+      showing the operation is independent of the chosen representatives. ∎
+    </p>
+
+    <p class="definition">
+      Definition (Multiplication on \(\mathbb Q\)):  For \([p,q],[r,s]\in\mathbb Q\) set
+      \[
+        [p,q]\;\cdot\;[r,s]\;:=\;[pr,\;qs].
+      \]
+    </p>
+
+    <div class="proof">Multiplication is well‑defined</div>
+    <p>
+      Using the same hypotheses as above,
+      \[
+        (pr)q's' = p q' r s' = p' q r' s = (p'q') (r's')
+      \]
+      and thus the product does not depend on the representatives. ∎
+    </p>
+
+    <p class="definition">
+      Definition (Order on \(\mathbb Q\)):  For \([p,q],[r,s]\in\mathbb Q\) with
+      \(q>0,\;s>0\) define
+      \[
+        [p,q]\;\le\;[r,s]\quad\Longleftrightarrow\quad ps\le qr,
+      \]
+      where the inequality on the right‑hand side is the usual order on \(\mathbb Z\).
+    </p>
+
+    <div class="proof">Order is well‑defined</div>
+    <p>
+      If \((p,q)\approx(p',q')\) then \(pq'=p'q\); similarly for \((r,s)\approx(r',s')\).
+      Multiplying the equality \(ps\le qr\) by the positive integer \(q's'\) yields
+      \(p s q' s' \le q r q' s'\).  Substituting using the equivalence equalities gives
+      \(p' s' q s \le q' r' s q'\); which is precisely \(p's' \le q'r'\).  Hence the order does
+      not depend on the representatives. ∎
+    </p>
+  </div>
+
+  <div class="section-box">
+    <h2>Cauchy Sequences and the Real Numbers \(\mathbb R\)</h2>
+    <p class="definition">
+      Definition (Sequence of rationals):  A **sequence** of rational numbers is a function
+      \(\alpha:\mathbb N\to\mathbb Q\).  We write \(\alpha=(a_{n})_{n\in\mathbb N}\) with
+      \(a_{n}=\alpha(n)\).
+    </p>
+
+    <p class="definition">
+      Definition (Absolute value on \(\mathbb Q\)):
+      For a rational \(q=\frac{p}{r}\) with \(p\in\mathbb Z,\;r\in\mathbb N\setminus\{0\}\) define
+      \[
+        |q|:=\frac{|p|}{r},
+      \]
+      where \(|p|\) is the usual absolute value on integers.
+    </p>
+
+    <p class="definition">
+      Definition (Cauchy sequence):  A sequence \((a_{n})\) of rationals is **Cauchy** if
+      \[
+        \forall\varepsilon>0\; \exists N\in\mathbb N\; \forall m,n\ge N\;
+        |a_{m}-a_{n}|<\varepsilon .
+      \]
+      Here \(\varepsilon\) ranges over the positive rationals.
+    </p>
+
+    <p class="definition">
+      Definition (Null sequence):  A Cauchy sequence \((a_{n})\) is a **null sequence** (or
+      **converges to \(0\)**) when
+      \[
+        \forall\varepsilon>0\; \exists N\in\mathbb N\; \forall n\ge N\; |a_{n}|<\varepsilon .
+      \]
+    </p>
+
+    <p class="definition">
+      Definition (Equivalence of Cauchy sequences):  For Cauchy sequences
+      \(\alpha=(a_{n})\) and \(\beta=(b_{n})\) define
+      \[
+        \alpha\sim\beta \quad\Longleftrightarrow\quad (a_{n}-b_{n})_{n\in\mathbb N}
+        \text{ is a null sequence.}
+      \]
+    </p>
+
+    <div class="proof">\(\sim\) is an equivalence relation</div>
+    <p>
+      <strong>Reflexivity.</strong>  \(a_{n}-a_{n}=0\) for all \(n\); the zero sequence is null,
+      so \(\alpha\sim\alpha\).<br>
+      <strong>Symmetry.</strong>  If \(\alpha\sim\beta\) then \((a_{n}-b_{n})\) is null.
+      Multiplying by \(-1\) shows \((b_{n}-a_{n})\) is null; hence \(\beta\sim\alpha\).<br>
+      <strong>Transitivity.</strong>  Suppose \(\alpha\sim\beta\) and \(\beta\sim\gamma\).
+      Then \((a_{n}-b_{n})\) and \((b_{n}-c_{n})\) are null.  Given \(\varepsilon>0\) choose
+      \(N_{1},N_{2}\) such that for all \(n\ge N_{1}\) we have \(|a_{n}-b_{n}|<\varepsilon/2\)
+      and for all \(n\ge N_{2}\) we have \(|b_{n}-c_{n}|<\varepsilon/2\).  For
+      \(n\ge\max(N_{1},N_{2})\) the triangle inequality yields
+      \(|a_{n}-c_{n}|\le|a_{n}-b_{n}|+|b_{n}-c_{n}|<\varepsilon\).  Hence
+      \((a_{n}-c_{n})\) is null and \(\alpha\sim\gamma\).  ∎
+    </p>
+
+    <p class="definition">
+      Definition (Real numbers):  Let \(\mathcal C\) be the set of all Cauchy sequences of rational
+      numbers.  The **real numbers** are the set of equivalence classes
+      \[
+        \mathbb R:=\mathcal C\big/\!\sim .
+      \]
+      An element of \(\mathbb R\) is denoted by \([\alpha]\) where \(\alpha\) is a Cauchy
+      sequence of rationals.  We call \([\alpha]\) the **real number represented by
+      \(\alpha\)**.
+    </p>
+
+    <p class="definition">
+      Definition (Operations on \(\mathbb R\)):  For \([\alpha],[\beta]\in\mathbb R\) with
+      \(\alpha=(a_{n})\) and \(\beta=(b_{n})\) define
+      \[
+        [\alpha]\,+\,[\beta]\;:=\;[\, (a_{n}+b_{n})_{n\in\mathbb N} \,],
+        \qquad
+        [\alpha]\;\cdot\;[\beta]\;:=\;[\, (a_{n}b_{n})_{n\in\mathbb N} \,].
+      \]
+    </p>
+
+    <div class="proof">Well‑definedness of the operations</div>
+    <p>
+      Suppose \(\alpha\sim\alpha'\) and \(\beta\sim\beta'\).  Then
+      \((a_{n}-a'_{n})\) and \((b_{n}-b'_{n})\) are null.  For addition we have
+      \[
+        (a_{n}+b_{n})-(a'_{n}+b'_{n})=(a_{n}-a'_{n})+(b_{n}-b'_{n}),
+      \]
+      a sum of two null sequences, which is again null; hence
+      \((a_{n}+b_{n})\sim(a'_{n}+b'_{n})\).  For multiplication,
+      \[
+        a_{n}b_{n}-a'_{n}b'_{n}=a_{n}b_{n}-a_{n}b'_{n}+a_{n}b'_{n}-a'_{n}b'_{n}
+        =a_{n}(b_{n}-b'_{n})+b'_{n}(a_{n}-a'_{n}),
+      \]
+      and each term is a product of a bounded rational sequence with a null sequence,
+      which is again null.  Therefore the product classes are equal.  ∎
+    </p>
+
+    <p class="definition">
+      Definition (Embedding of \(\mathbb Q\) into \(\mathbb R\)):
+      For a rational \(q\in\mathbb Q\) consider the constant sequence
+      \(\mathbf{c}_{q}=(q,q,q,\dots)\).  Its class \([\mathbf{c}_{q}]\) is a real number.
+      The map \(q\mapsto[\mathbf{c}_{q}]\) is an injective homomorphism, allowing us to
+      identify \(\mathbb Q\) with a subset of \(\mathbb R\).
+    </p>
+
+    <p class="definition">
+      Definition (Absolute value on \(\mathbb R\)):  For \([\alpha]\in\mathbb R\) with
+      \(\alpha=(a_{n})\) define
+      \[
+        \bigl|[\alpha]\bigr|:=\bigl[\,|a_{n}|\,\bigr] .
+      \]
+      This is well‑defined because \(|\cdot|\) on \(\mathbb Q\) preserves null differences.
+    </p>
+
+    <p>
+      With the operations and order induced from the rationals, \(\mathbb R\) satisfies the
+      **completeness axiom**: every Cauchy sequence of real numbers converges to a real number.
+      In our construction this holds by definition: a Cauchy sequence of reals is represented
+      by a Cauchy sequence of Cauchy sequences of rationals; taking a diagonal subsequence
+      yields a single Cauchy sequence of rationals whose class is the limit.  Consequently,
+      \(\mathbb R\) is a complete ordered field, which characterises the real numbers up to
+      unique isomorphism.
+    </p>
+  </div>
+
 
   <div style="text-align: center; margin: 20px;">
     <a href="../project1.html" class="button home" target="_self">Return to Home</a>
-</div>
+  </div>
 
   <footer>
-    <p>&copy; 2024 Pqb0. All rights reserved.</p>
+    <p>&copy; 2026 Pqb0. All rights reserved.</p>
   </footer>
 </body>
 </html>

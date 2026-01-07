@@ -1,334 +1,377 @@
-/* Variables for colors */
-:root {
-  --main-bg-color: #c1c1c1;
-  --secondary-bg-color: #3b5a70;
-  --footer-text-color: white;
-  --button-bg-color: #bcbebf;
-  --button-hover-bg-color: #e8e8e8;
-  --card-border-color: #a9aeb2;
-  --container-light-color: #b9b9b9;
-  --container-dark-color: #2a5e71;
-}
-
-
-
-a {
-  color: inherit;
-  align-self: center;
-  text-decoration: dashed;
-
-}
-.gold{
-  color: rgb(255, 255, 239);
-  padding: 10px;
-  margin: 20px;
-  text-align: center;
-}
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background: linear-gradient(115deg, var(--main-bg-color), var(--secondary-bg-color));
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-li {
-  padding: 10px;
-}
-h2 {
-  margin: 10px;
-  text-align: center;
-}
-
-.box-content {
-  display: flex;
-  flex-direction: column;
-  transition: all 0.5s ease;
-  align-items: center;
+/* ================================
+   Variables for colors
+   ================================ */
+   :root {
+    --main-bg-color: #c1c1c1;
+    --secondary-bg-color: #3b5a70;
+    --footer-text-color: white;
+    --button-bg-color: #bcbebf;
+    --button-hover-bg-color: #e8e8e8;
+    --card-border-color: #a9aeb2;
+    --container-light-color: #b9b9b9;
+    --container-dark-color: #2a5e71;
+  }
   
-}
-
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-p {
-  margin: 10px;
-  padding: 20px;
-  text-align: center;
-}
-
-footer {
-  color: var(--footer-text-color);
-  text-align: center;
-  padding: 10px;
-  width: 100%;
-}
-
-.title {
-  font-size: 5em;
-  transition: all 4.5s ease;
-
-}
-
-
-.math-content {
-  width: 100%; /* Ensures the content fits the card */
-  text-align: center;
-  font-size: 1.1em; /* Adjust font size for readability */
-  line-height: 1.6; /* Improves line spacing */
-  margin: 0; /* Resets margin for clean alignment */
-  padding: 10px; /* Adds spacing within the card */
-  word-wrap: break-word; /* Ensures math content wraps properly */
-}
-
-.title-box {
-  position: relative;
-  width: 90%;
-  max-width: 800px;
-  height: 40vh;
-  padding: 20px;
-  margin: 10vh auto;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 80px;
-  transition: all 4.5s ease;
-  border: 1px solid #b6b6b6;
-
-}
-
-.title-box:hover {
-  border: 10px solid #ececec;
-  filter: drop-shadow(0 0 20px #d6d6d6);
-  border-radius: 110px;
-}
-
-.title-box:hover .title {
-  color: #ececec;
-}
-
-.section-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.card {
-  position: relative;
-  width: 90%;
-  max-width: 500px;
-  height: 250px;
-  padding: 55px;
-  margin: 20px auto;
-  border-radius: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  transition: all 0.5s ease;
-  word-wrap: break-word; /* Ensures teaxt wraps */
-  overflow-wrap: break-word; /* Compatible with more browsers */
-}
-
-.card:hover {
-  border: 3px solid #d0d0d0;
-  border-radius: 80px;
-  width: 95%;
-  max-width: 550px;
-  height: 300px;
-  filter: drop-shadow(0 0 20px #dadada);
-
-}
-
-.card:hover .box-content {
-  color: #d8dce2;
-}
-.card.active {
-  width: 95%;
-  max-width: 60vw;
-  height: 60vh;
-  font-size: 1.2em;
-  border-radius: 80px;
-  filter: drop-shadow(0 0 20px #c9c9c9);
-}
-.extra-text {
-  text-align: center;
-  display: none; /* Hide by default */
-  margin-top: 10px;
+  /* ================================
+     Global
+     ================================ */
+  * {
+    box-sizing: border-box;
+  }
   
-}
-.card.active .extra-text {
-  display: block; /* Show when card is active */
-}
-
-.card.active .button {
-  display: block; /* Show when card is active */
-}
-
-.button {
-  background-color: var(--button-bg-color);
-  color: #373434;
-  border: solid 1px rgb(227, 225, 225);
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.button.home {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-}
-
-.button:hover {
-  background-color: var(--button-hover-bg-color);
-}
-
-.socials {
-  display: flex;
-  gap: 16px;
-  margin-top: 18px;
-  align-items: center;
-}
-
-.socials a {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: rgba(255, 215, 0, 0.08); /* subtle gold */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: linear-gradient(
+      115deg,
+      var(--main-bg-color),
+      var(--secondary-bg-color)
+    );
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  /* ================================
+     Links (UPDATED)
+     ================================ */
+  a {
+    color: inherit;
+    align-self: center;
+    text-decoration: none;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1.5px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .button:hover,
+  .socials a:hover {
+    text-decoration: none;
+  }
+  
+  .gold {
+    color: rgb(255, 255, 239);
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .gold:hover {
+    text-decoration-color: rgba(255, 255, 239, 0.9);
+  }
+  
+  /* ================================
+     Typography
+     ================================ */
+  li {
+    padding: 10px;
+  }
+  
+  h2 {
+    margin: 10px;
+    text-align: center;
+  }
+  
+  p {
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* ================================
+     Layout & Containers
+     ================================ */
+  .box-content {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease;
+    align-items: center;
+  }
+  
+  .section-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  /* ================================
+     Title Section
+     ================================ */
+  .title {
+    font-size: 5em;
+    transition: all 4.5s ease;
+  }
+  
+  .title-box {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    height: 40vh;
+    padding: 20px;
+    margin: 10vh auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
+    transition: all 4.5s ease;
+    border: 1px solid #b6b6b6;
+  }
+  
+  .title-box:hover {
+    border: 10px solid #ececec;
+    filter: drop-shadow(0 0 20px #d6d6d6);
+    border-radius: 110px;
+  }
+  
+  .title-box:hover .title {
+    color: #ececec;
+  }
+  
+  /* ================================
+     Cards
+     ================================ */
+  .card {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    height: 250px;
+    padding: 55px;
+    margin: 20px auto;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 0.5s ease;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .card:hover {
+    border: 3px solid #d0d0d0;
+    border-radius: 80px;
+    width: 95%;
+    max-width: 550px;
+    height: 300px;
+    filter: drop-shadow(0 0 20px #dadada);
+  }
+  
+  .card:hover .box-content {
+    color: #d8dce2;
+  }
+  
+  .card.active {
+    width: 95%;
+    max-width: 60vw;
+    height: 60vh;
+    font-size: 1.2em;
+    border-radius: 80px;
+    filter: drop-shadow(0 0 20px #c9c9c9);
+  }
+  
+  /* ================================
+     Card Content
+     ================================ */
+  .extra-text {
+    text-align: center;
+    display: none;
+    margin-top: 10px;
+  }
+  
+  .card.active .extra-text {
+    display: block;
+  }
+  
+  /* ================================
+     Buttons
+     ================================ */
+  .button {
+    background-color: var(--button-bg-color);
+    color: #373434;
+    border: solid 1px rgb(227, 225, 225);
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: var(--button-hover-bg-color);
+  }
+  
+  .button.home {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+  
+  /* ================================
+     Social Icons
+     ================================ */
+  .socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 18px;
+    align-items: center;
+  }
+  
+  .socials a {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(255, 215, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
       transform 0.25s ease,
       box-shadow 0.25s ease,
       background 0.25s ease;
-}
-
-.socials a img {
-  width: 22px;
-  height: 22px;
-  filter: brightness(0.9);
-  transition: filter 0.25s ease;
-}
-
-.socials a:hover {
-  transform: translateY(-4px) scale(1.05);
-  background: rgba(255, 215, 0, 0.18);
-  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.25);
-}
-
-.socials a:hover img {
-  filter: brightness(1.2);
-}
-
-
-@keyframes hover-lightly {
-  0% {
-    transform: translateX(0);
   }
-  50% {
-    transform: translateX(10vw);
-  }
-  100% {
-    transform: translateX(-10vw);
-  }
-}@media screen and (max-width: 768px) {
-
-  /* ---------- Title Box ---------- */
-  .title-box {
-    width: 95%;
-    height: auto;
-    min-height: 25vh;
-    padding: 20px;
-    border-radius: 32px;
-    margin: 6vh auto;
-  }
-
-  .title {
-    font-size: 2.8em;
-  }
-
-  /* ---------- Section Layout ---------- */
-  .section-box {
-    padding: 10px;
-    gap: 20px;
-  }
-
-  /* ---------- Cards ---------- */
-  .card {
-    width: 95%;
-    max-width: 420px;
-    height: auto;
-    padding: 28px;
-    border-radius: 28px;
-    transition: none; /* disable hover expansion on touch */
-  }
-
-  /* Disable hover effects on mobile */
-  .card:hover {
-    width: 95%;
-    max-width: 420px;
-    height: auto;
-    border-radius: 28px;
-    filter: none;
-  }
-
-  /* Active card behavior (tap-based) */
-  .card.active {
-    width: 95%;
-    max-width: 95%;
-    height: auto;
-    font-size: 1.05em;
-    border-radius: 32px;
-  }
-
-  /* ---------- Text ---------- */
-  p {
-    padding: 12px;
-    font-size: 0.95em;
-  }
-
-  h2 {
-    font-size: 1.2em;
-  }
-
-  /* ---------- Social Icons ---------- */
-  .socials {
-    justify-content: center;
-    gap: 14px;
-    margin-top: 14px;
-  }
-
-  .socials a {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-  }
-
+  
   .socials a img {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
+    filter: brightness(0.9);
+    transition: filter 0.25s ease;
   }
-
-  /* ---------- Buttons ---------- */
-  .button {
-    font-size: 0.85em;
-    padding: 8px 14px;
+  
+  .socials a:hover {
+    transform: translateY(-4px) scale(1.05);
+    background: rgba(255, 215, 0, 0.18);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.25);
   }
-
-  /* ---------- Disable horizontal motion ---------- */
+  
+  .socials a:hover img {
+    filter: brightness(1.2);
+  }
+  
+  /* ================================
+     Math Content
+     ================================ */
+  .math-content {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 0;
+    padding: 10px;
+    word-wrap: break-word;
+  }
+  
+  /* ================================
+     Footer
+     ================================ */
+  footer {
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  /* ================================
+     Motion
+     ================================ */
   @keyframes hover-lightly {
-    0%, 100% {
-      transform: translateX(0);
+    0% { transform: translateX(0); }
+    50% { transform: translateX(10vw); }
+    100% { transform: translateX(-10vw); }
+  }
+  
+  /* ================================
+     Responsive (Mobile)
+     ================================ */
+  @media screen and (max-width: 768px) {
+  
+    .title-box {
+      width: 95%;
+      height: auto;
+      min-height: 25vh;
+      padding: 20px;
+      border-radius: 32px;
+      margin: 6vh auto;
+    }
+  
+    .title {
+      font-size: 2.8em;
+    }
+  
+    .section-box {
+      padding: 10px;
+      gap: 20px;
+    }
+  
+    .card {
+      width: 95%;
+      max-width: 420px;
+      height: auto;
+      padding: 28px;
+      border-radius: 28px;
+      transition: none;
+    }
+  
+    .card:hover {
+      width: 95%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 28px;
+      filter: none;
+    }
+  
+    .card.active {
+      width: 95%;
+      max-width: 95%;
+      height: auto;
+      font-size: 1.05em;
+      border-radius: 32px;
+    }
+  
+    p {
+      padding: 12px;
+      font-size: 0.95em;
+    }
+  
+    h2 {
+      font-size: 1.2em;
+    }
+  
+    .socials {
+      justify-content: center;
+      gap: 14px;
+      margin-top: 14px;
+    }
+  
+    .socials a {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+    }
+  
+    .socials a img {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .button {
+      font-size: 0.85em;
+      padding: 8px 14px;
+    }
+  
+    @keyframes hover-lightly {
+      0%, 100% {
+        transform: translateX(0);
+      }
     }
   }
-
-}
+  
