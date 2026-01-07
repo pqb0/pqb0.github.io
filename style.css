@@ -44,6 +44,13 @@ h2 {
   display: flex;
   flex-direction: column;
   transition: all 0.5s ease;
+  align-items: center;
+  
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 p {
@@ -149,6 +156,7 @@ footer {
   filter: drop-shadow(0 0 20px #c9c9c9);
 }
 .extra-text {
+  text-align: center;
   display: none; /* Hide by default */
   margin-top: 10px;
   
@@ -183,6 +191,45 @@ footer {
   background-color: var(--button-hover-bg-color);
 }
 
+.socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 18px;
+  align-items: center;
+}
+
+.socials a {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 215, 0, 0.08); /* subtle gold */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      background 0.25s ease;
+}
+
+.socials a img {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0.9);
+  transition: filter 0.25s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: rgba(255, 215, 0, 0.18);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.25);
+}
+
+.socials a:hover img {
+  filter: brightness(1.2);
+}
+
+
 @keyframes hover-lightly {
   0% {
     transform: translateX(0);
@@ -193,58 +240,95 @@ footer {
   100% {
     transform: translateX(-10vw);
   }
-}
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  
-  /* Reduce Title Box Size */
+}@media screen and (max-width: 768px) {
+
+  /* ---------- Title Box ---------- */
   .title-box {
     width: 95%;
-    height: 30vh;
-    padding: 15px;
-    border-radius: 40px;
-    margin: 5vh auto;
+    height: auto;
+    min-height: 25vh;
+    padding: 20px;
+    border-radius: 32px;
+    margin: 6vh auto;
   }
 
   .title {
-    font-size: 3em; /* Reduce title size */
+    font-size: 2.8em;
   }
 
-  /* Stack Cards Vertically */
+  /* ---------- Section Layout ---------- */
   .section-box {
-    flex-direction: column;
-    align-items: center;
     padding: 10px;
+    gap: 20px;
   }
 
-  /* Reduce Card Size */
+  /* ---------- Cards ---------- */
   .card {
     width: 95%;
-    max-width: 400px;
-    height: auto;
-    padding: 30px;
-    border-radius: 30px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .card:hover {
-    width: 100%;
-    height: auto;
     max-width: 420px;
-    border-radius: 40px;
+    height: auto;
+    padding: 28px;
+    border-radius: 28px;
+    transition: none; /* disable hover expansion on touch */
   }
 
-  /* Adjust Button Size */
+  /* Disable hover effects on mobile */
+  .card:hover {
+    width: 95%;
+    max-width: 420px;
+    height: auto;
+    border-radius: 28px;
+    filter: none;
+  }
+
+  /* Active card behavior (tap-based) */
+  .card.active {
+    width: 95%;
+    max-width: 95%;
+    height: auto;
+    font-size: 1.05em;
+    border-radius: 32px;
+  }
+
+  /* ---------- Text ---------- */
+  p {
+    padding: 12px;
+    font-size: 0.95em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  /* ---------- Social Icons ---------- */
+  .socials {
+    justify-content: center;
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  .socials a {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .socials a img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* ---------- Buttons ---------- */
   .button {
-    font-size: 0.9em;
-    padding: 8px 15px;
+    font-size: 0.85em;
+    padding: 8px 14px;
   }
 
-  /* Stop Cards from Moving Side-to-Side */
+  /* ---------- Disable horizontal motion ---------- */
   @keyframes hover-lightly {
     0%, 100% {
       transform: translateX(0);
     }
   }
+
 }
