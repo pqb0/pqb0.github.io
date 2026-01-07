@@ -290,6 +290,35 @@
   }
   
   /* ================================
+   Papers section refinements
+   ================================ */
+
+.papers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.paper-item {
+  line-height: 1.55;
+}
+
+.paper-title {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.paper-meta {
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+.paper-links {
+  margin-top: 0.3rem;
+  font-size: 0.95rem;
+}
+
+  /* ================================
      Responsive (Mobile)
      ================================ */
   @media screen and (max-width: 768px) {
